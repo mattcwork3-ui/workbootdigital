@@ -1,0 +1,914 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="Workboot Digital — pre-built website rebuilds for Calgary trades and home-services businesses. Invited clients: enter your code to view your rebuild." />
+<link rel="icon" href="data:," />
+<title>Workboot Digital — Calgary Website Rebuilds for Trades</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f6f4;
+    --surface:#ffffff;
+    --surface-2:#efefec;
+    --ink:#17181c;
+    --ink-2:#2a2c33;
+    --muted:#5f6370;
+    --muted-2:#8a8e9a;
+    --accent:#4c4ea3;
+    --accent-strong:#3d3f8a;
+    --accent-soft:#ececf7;
+    --accent-line:#c9cae6;
+    --line:#e2e2dc;
+    --error:#b42318;
+    --error-bg:#fef3f2;
+    --error-line:#f5c6c2;
+    --success:#067647;
+    --success-bg:#ecfdf3;
+    --shadow:0 18px 44px rgba(23,24,28,.10), 0 2px 8px rgba(23,24,28,.06);
+    --radius:18px;
+    --bar-bg:#17181c;
+    --bar-ink:#f4f4f6;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#121316;
+      --surface:#1e2026;
+      --surface-2:#26282f;
+      --ink:#f4f4f6;
+      --ink-2:#e6e7ec;
+      --muted:#a7aab8;
+      --muted-2:#7e8291;
+      --accent:#9497d9;
+      --accent-strong:#aeb0e6;
+      --accent-soft:#262842;
+      --accent-line:#3d3f68;
+      --line:#2e3038;
+      --error:#fda29b;
+      --error-bg:#3a1d1a;
+      --error-line:#6b2f2a;
+      --success:#6ce9a6;
+      --success-bg:#0d2b1d;
+      --shadow:0 18px 44px rgba(0,0,0,.45), 0 2px 8px rgba(0,0,0,.35);
+      --bar-bg:#0c0d10;
+      --bar-ink:#f4f4f6;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family:"Barlow", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    display:flex;
+    flex-direction:column;
+    min-height:100dvh;
+  }
+  body.preview-open{overflow:hidden}
+  #landing{display:flex; flex-direction:column; flex:1; width:100%; min-height:100dvh}
+  #landing[hidden]{display:none !important}
+  #pitch[hidden]{display:none !important}
+  #ctaBlock[hidden]{display:none !important}
+  a{color:var(--accent); text-underline-offset:3px}
+  a:hover{color:var(--accent-strong)}
+  button, input{font:inherit}
+
+  /* ---------- header ---------- */
+  .site-header{
+    width:100%;
+    max-width:1080px;
+    margin:0 auto;
+    padding:20px 24px 0;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+  }
+  .brand{display:flex; align-items:center; gap:12px; min-width:0}
+  .mark{
+    width:44px; height:44px; flex:0 0 44px;
+    border-radius:12px;
+    background:var(--ink);
+    color:var(--bg);
+    display:flex; align-items:center; justify-content:center;
+    font-family:"Archivo", system-ui, sans-serif;
+    font-weight:900; font-size:24px; letter-spacing:-1px;
+  }
+  @media (prefers-color-scheme: dark){
+    .mark{background:#f4f4f6; color:#17181c}
+  }
+  .brand-text{line-height:1.05; min-width:0}
+  .brand-text strong{
+    display:block;
+    font-family:"Archivo", system-ui, sans-serif;
+    font-size:18px; font-weight:800; letter-spacing:.2px; white-space:nowrap;
+  }
+  .brand-text strong span{color:var(--accent)}
+  .brand-text small{
+    display:block;
+    font-size:10.5px; letter-spacing:2.6px; font-weight:700;
+    color:var(--muted); text-transform:uppercase; margin-top:3px; white-space:nowrap;
+  }
+  .header-domain{
+    font-size:14px; font-weight:600; color:var(--muted);
+    white-space:nowrap;
+  }
+  .header-domain a{color:var(--muted); text-decoration:none}
+  .header-domain a:hover{color:var(--ink)}
+
+  /* ---------- main / hero ---------- */
+  main{
+    flex:1;
+    width:100%;
+    max-width:1080px;
+    margin:0 auto;
+    padding:28px 24px 40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .card{
+    width:100%;
+    max-width:620px;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:24px;
+    box-shadow:var(--shadow);
+    padding:44px 44px 36px;
+    text-align:center;
+  }
+  .location{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:13px; font-weight:700; letter-spacing:.4px;
+    color:var(--muted);
+    background:var(--surface-2);
+    border:1px solid var(--line);
+    padding:6px 12px; border-radius:999px;
+    margin-bottom:22px;
+  }
+  .location i{
+    width:8px; height:8px; border-radius:50%;
+    background:#1a9e6b; display:inline-block; flex:0 0 8px;
+  }
+  h1{
+    font-family:"Archivo", system-ui, sans-serif;
+    font-size:clamp(36px, 6vw, 52px);
+    line-height:1.02; letter-spacing:-.5px; font-weight:900;
+    margin:0 0 16px;
+  }
+  h1 .accent{color:var(--accent)}
+  .lede{
+    font-size:19px; color:var(--muted);
+    max-width:480px; margin:0 auto 30px;
+  }
+  .lede strong{color:var(--ink); font-weight:700}
+
+  .cta-primary{
+    display:inline-flex; align-items:center; justify-content:center; gap:10px;
+    width:100%; max-width:420px;
+    background:var(--accent); color:#fff;
+    border:1px solid var(--accent);
+    font-weight:700; font-size:18px;
+    padding:16px 24px; border-radius:14px;
+    cursor:pointer;
+    box-shadow:0 10px 22px rgba(76,78,163,.28);
+    transition:background .15s ease, transform .15s ease, box-shadow .15s ease;
+  }
+  @media (prefers-color-scheme: dark){
+    .cta-primary{color:#12132a}
+  }
+  .cta-primary:hover{background:var(--accent-strong); border-color:var(--accent-strong)}
+  .cta-primary:focus-visible, .btn:focus-visible, input:focus-visible, .back-link:focus-visible{
+    outline:3px solid var(--accent); outline-offset:2px;
+  }
+  .cta-primary svg{flex:0 0 auto}
+  .cta-note{
+    margin:14px auto 0; font-size:14px; color:var(--muted-2); max-width:420px;
+  }
+
+  .divider{
+    display:flex; align-items:center; gap:14px;
+    margin:32px 0 22px; color:var(--muted-2);
+    font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
+  }
+  .divider::before,.divider::after{content:""; flex:1; height:1px; background:var(--line)}
+
+  .contact-line{font-size:16px; color:var(--muted); margin:0}
+  .contact-line a{font-weight:700; text-decoration:none}
+  .contact-line a:hover{text-decoration:underline}
+
+  /* ---------- code gate ---------- */
+  .gate{
+    text-align:left;
+    background:var(--accent-soft);
+    border:1px solid var(--accent-line);
+    border-radius:var(--radius);
+    padding:24px;
+    margin-top:8px;
+  }
+  .gate[hidden]{display:none !important}
+  .gate-head{display:flex; gap:14px; align-items:flex-start; margin-bottom:18px}
+  .gate-icon{
+    width:42px; height:42px; flex:0 0 42px; border-radius:11px;
+    background:var(--surface); border:1px solid var(--accent-line);
+    display:flex; align-items:center; justify-content:center; color:var(--accent);
+  }
+  .gate-head h2{
+    font-family:"Archivo", system-ui, sans-serif;
+    font-size:20px; line-height:1.15; margin:1px 0 4px; font-weight:800;
+  }
+  .gate-head p{margin:0; font-size:14.5px; color:var(--muted)}
+  .gate label{
+    display:block; font-size:13px; font-weight:700; letter-spacing:.6px;
+    text-transform:uppercase; color:var(--ink-2); margin-bottom:8px;
+  }
+  .gate-row{display:flex; gap:10px}
+  .gate input{
+    flex:1; min-width:0;
+    background:var(--surface); color:var(--ink);
+    border:1.5px solid var(--line); border-radius:12px;
+    padding:13px 14px; font-size:17px; font-weight:600;
+    letter-spacing:1.5px; text-transform:uppercase;
+  }
+  .gate input::placeholder{letter-spacing:.2px; text-transform:none; font-weight:500; color:var(--muted-2)}
+  .gate input[aria-invalid="true"]{border-color:var(--error)}
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    background:var(--ink); color:var(--bg);
+    border:1px solid var(--ink);
+    font-weight:700; font-size:16px;
+    padding:13px 20px; border-radius:12px; cursor:pointer; white-space:nowrap;
+  }
+  @media (prefers-color-scheme: dark){
+    .btn{background:#f4f4f6; color:#17181c; border-color:#f4f4f6}
+  }
+  .btn:hover{opacity:.92}
+  .gate-hint{margin:10px 0 0; font-size:13.5px; color:var(--muted)}
+  .gate-error{
+    display:flex; gap:10px; align-items:flex-start;
+    margin-top:14px; padding:12px 14px;
+    background:var(--error-bg); border:1px solid var(--error-line);
+    border-radius:12px; color:var(--error);
+    font-size:14.5px; font-weight:600; line-height:1.4;
+  }
+  .gate-error[hidden]{display:none !important}
+  .gate-error svg{flex:0 0 auto; margin-top:1px}
+  .gate-success{
+    display:flex; gap:10px; align-items:flex-start;
+    margin-top:14px; padding:12px 14px;
+    background:var(--success-bg); border:1px solid var(--line);
+    border-radius:12px; color:var(--success);
+    font-size:14.5px; font-weight:600; line-height:1.4;
+  }
+  .gate-success[hidden]{display:none !important}
+  .gate-expired{
+    display:flex; gap:10px; align-items:flex-start;
+    margin-top:14px; padding:12px 14px;
+    background:#fffaeb; border:1px solid #f5d98b;
+    border-radius:12px; color:#93370d;
+    font-size:14.5px; font-weight:600; line-height:1.4;
+  }
+  @media (prefers-color-scheme: dark){
+    .gate-expired{background:#33270d; border-color:#6b5518; color:#fcd34d}
+  }
+  .gate-expired[hidden]{display:none !important}
+  .gate-expired svg{flex:0 0 auto; margin-top:1px}
+  .back-link{
+    background:none; border:0; padding:8px 0 0; cursor:pointer;
+    color:var(--muted); font-size:14px; font-weight:600;
+    display:inline-flex; align-items:center; gap:6px;
+  }
+  .back-link:hover{color:var(--ink)}
+  .shake{animation:shake .32s ease}
+  @keyframes shake{
+    0%,100%{transform:translateX(0)}
+    25%{transform:translateX(-6px)}
+    50%{transform:translateX(6px)}
+    75%{transform:translateX(-4px)}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .shake{animation:none}
+    .cta-primary{transition:none}
+  }
+
+  /* ---------- footer ---------- */
+  footer{
+    width:100%; max-width:1080px; margin:0 auto;
+    padding:0 24px 24px;
+    display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+    font-size:13.5px; color:var(--muted-2);
+  }
+  footer a{color:var(--muted); text-decoration:none; font-weight:600}
+  footer a:hover{color:var(--ink)}
+
+  /* ---------- preview (full-screen) ---------- */
+  .preview{
+    position:fixed; inset:0; z-index:60;
+    background:#0c0d10;
+    display:flex; flex-direction:column;
+  }
+  .preview[hidden]{display:none !important}
+  .preview-bar{
+    flex:0 0 auto;
+    min-height:56px;
+    background:var(--bar-bg); color:var(--bar-ink);
+    display:flex; align-items:center; gap:12px;
+    padding:8px 14px;
+    border-bottom:1px solid rgba(255,255,255,.12);
+  }
+  .preview-bar .mark{width:34px; height:34px; flex-basis:34px; border-radius:9px; font-size:19px; background:#f4f4f6; color:#17181c}
+  .preview-title{min-width:0; flex:1; line-height:1.15}
+  .preview-title strong{display:block; font-size:15px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+  .preview-title small{display:block; font-size:12px; color:#a7aab8; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+  .preview-back{
+    flex:0 0 auto;
+    display:inline-flex; align-items:center; gap:8px;
+    background:#f4f4f6; color:#17181c; border:0;
+    font-weight:700; font-size:14.5px;
+    padding:10px 16px; border-radius:10px; cursor:pointer;
+  }
+  .preview-back:hover{background:#fff}
+  .preview-back:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+  .preview-timer{
+    flex:0 0 auto;
+    display:inline-flex; align-items:center; gap:7px;
+    background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.22);
+    color:#f4f4f6;
+    font-size:13.5px; font-weight:700; font-variant-numeric:tabular-nums;
+    padding:8px 12px; border-radius:999px; white-space:nowrap;
+  }
+  .preview-timer svg{flex:0 0 auto; opacity:.85}
+  .preview-timer strong{font-variant-numeric:tabular-nums; letter-spacing:.4px}
+  .preview-timer.urgent{background:#7a271a; border-color:#f97066; color:#fff}
+  .preview-frame-wrap{flex:1; min-height:0; background:#fff}
+  .preview iframe{
+    display:block; width:100%; height:100%; border:0; background:#fff;
+  }
+  .preview-loading{
+    padding:28px 18px; text-align:center; color:#a7aab8; font-size:15px;
+  }
+  .preview-loading[hidden]{display:none !important}
+
+  /* ---------- pitch page ---------- */
+  .pitch{display:flex; flex-direction:column; min-height:100dvh; width:100%}
+  .pitch-bar{
+    position:sticky; top:0; z-index:30;
+    background:var(--bar-bg); color:var(--bar-ink);
+    display:flex; align-items:center; gap:12px;
+    padding:8px 14px; min-height:56px;
+    border-bottom:1px solid rgba(255,255,255,.12);
+  }
+  .pitch-bar .mark{width:34px; height:34px; flex-basis:34px; border-radius:9px; font-size:19px; background:#f4f4f6; color:#17181c}
+  .pitch-title{min-width:0; flex:1; line-height:1.15}
+  .pitch-title strong{display:block; font-size:15px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+  .pitch-title small{display:block; font-size:12px; color:#a7aab8; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+  .pitch-home{
+    flex:0 0 auto; background:transparent; color:#f4f4f6; border:1px solid rgba(255,255,255,.35);
+    font-weight:700; font-size:13.5px; padding:9px 13px; border-radius:10px; cursor:pointer;
+  }
+  .pitch-home:hover{background:rgba(255,255,255,.12)}
+  .pitch-home:focus-visible, .pitch-rebuild:focus-visible, .pitch-reenter:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+  .pitch-wrap{width:100%; max-width:860px; margin:0 auto; padding:28px 24px 48px; flex:1}
+  .pitch-alert{
+    display:flex; gap:12px; align-items:flex-start;
+    background:var(--accent-soft); border:1px solid var(--accent-line);
+    border-radius:14px; padding:16px 18px; margin-bottom:26px;
+    font-size:15.5px; line-height:1.5; color:var(--ink-2);
+  }
+  .pitch-alert svg{flex:0 0 auto; margin-top:2px; color:var(--accent)}
+  .pitch-alert strong{color:var(--ink)}
+  .pitch-alert[hidden]{display:none !important}
+  .pitch-alert.expired-note{background:#fffaeb; border-color:#f5d98b; color:#7a3b08}
+  .pitch-alert.expired-note svg{color:#b54708}
+  .pitch-alert.expired-note strong{color:#93370d}
+  @media (prefers-color-scheme: dark){
+    .pitch-alert.expired-note{background:#33270d; border-color:#6b5518; color:#fde68a}
+    .pitch-alert.expired-note strong{color:#fcd34d}
+    .pitch-alert.expired-note svg{color:#fcd34d}
+  }
+  .pitch-doc{
+    background:var(--surface); border:1px solid var(--line); border-radius:24px;
+    box-shadow:var(--shadow); padding:44px 48px 40px;
+  }
+  .pitch-doc .from-line{font-size:14px; font-weight:700; letter-spacing:1.6px; text-transform:uppercase; color:var(--muted); margin:0 0 14px}
+  .pitch-doc h1{
+    font-family:"Archivo", system-ui, sans-serif;
+    font-size:clamp(30px, 5vw, 42px); line-height:1.08; letter-spacing:-.4px; font-weight:900; margin:0 0 18px; text-align:left;
+  }
+  .pitch-doc h1 .accent{color:var(--accent)}
+  .pitch-doc p{font-size:17px; color:var(--ink-2); margin:0 0 16px}
+  .pitch-doc p strong{color:var(--ink)}
+  .pitch-doc h2{
+    font-family:"Archivo", system-ui, sans-serif;
+    font-size:14px; font-weight:800; letter-spacing:2px; text-transform:uppercase;
+    color:var(--accent); margin:32px 0 14px;
+  }
+  .pitch-list{list-style:none; margin:0 0 8px; padding:0; display:grid; gap:12px}
+  .pitch-list li{
+    display:flex; gap:12px; align-items:flex-start;
+    background:var(--surface-2); border:1px solid var(--line); border-radius:14px; padding:14px 16px;
+    font-size:16px; line-height:1.5; color:var(--ink-2);
+  }
+  .pitch-list li strong{color:var(--ink)}
+  .pitch-list .li-icon{flex:0 0 auto; margin-top:2px; color:var(--error)}
+  .pitch-list.fixed .li-icon{color:var(--success)}
+  .pitch-rebuild{
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    width:100%; margin:30px 0 8px;
+    background:var(--accent); color:#fff; border:1px solid var(--accent);
+    font-weight:700; font-size:19px; padding:18px 24px; border-radius:14px; cursor:pointer;
+    box-shadow:0 10px 22px rgba(76,78,163,.28);
+  }
+  @media (prefers-color-scheme: dark){ .pitch-rebuild{color:#12132a} }
+  .pitch-rebuild:hover:not(:disabled){background:var(--accent-strong); border-color:var(--accent-strong)}
+  .pitch-rebuild:disabled{background:var(--surface-2); color:var(--muted-2); border-color:var(--line); box-shadow:none; cursor:not-allowed}
+  .pitch-rebuild-note{margin:0; font-size:14px; color:var(--muted); text-align:center}
+  .pitch-pricing{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:6px 0 4px}
+  .price-card{border:1.5px solid var(--line); border-radius:16px; padding:20px; background:var(--surface)}
+  .price-card .opt{font-size:12px; font-weight:800; letter-spacing:1.8px; text-transform:uppercase; color:var(--accent); margin:0 0 8px}
+  .price-card .amount{font-family:"Archivo", system-ui, sans-serif; font-size:27px; font-weight:900; line-height:1.1; margin:0 0 8px; color:var(--ink)}
+  .price-card p{font-size:15px; margin:0; color:var(--muted)}
+  .pitch-signoff{margin-top:30px; padding-top:22px; border-top:1px solid var(--line)}
+  .pitch-signoff p{font-size:16px}
+  .pitch-reenter{
+    display:inline-flex; align-items:center; gap:8px; margin-top:6px;
+    background:var(--ink); color:var(--bg); border:1px solid var(--ink);
+    font-weight:700; font-size:16px; padding:13px 20px; border-radius:12px; cursor:pointer;
+  }
+  @media (prefers-color-scheme: dark){ .pitch-reenter{background:#f4f4f6; color:#17181c; border-color:#f4f4f6} }
+  .pitch-reenter[hidden]{display:none !important}
+
+  @media (max-width:560px){
+    .pitch-wrap{padding:20px 14px 36px}
+    .pitch-doc{padding:30px 20px 26px; border-radius:20px}
+    .pitch-pricing{grid-template-columns:1fr}
+    .pitch-title small{display:none}
+    .pitch-bar{gap:8px; padding:8px 10px}
+    .pitch-bar .mark{display:none}
+    .pitch-home{font-size:12.5px; padding:8px 10px}
+    .site-header{padding:16px 18px 0}
+    .header-domain{display:none}
+    main{padding:20px 16px 32px}
+    .card{padding:32px 22px 28px; border-radius:20px}
+    .gate{padding:20px 16px}
+    .gate-row{flex-direction:column}
+    .gate-row .btn{width:100%}
+    footer{padding:0 18px 20px; justify-content:center; text-align:center}
+    .preview-title small{display:none}
+    .preview-timer{font-size:12.5px; padding:7px 10px}
+    .preview-timer .timer-label{display:none}
+    .preview-bar{gap:8px; padding:8px 10px}
+    .preview-bar .mark{display:none}
+    .preview-back{padding:9px 12px; font-size:13.5px}
+  }
+</style>
+</head>
+<body>
+
+  <!-- ============ LANDING ============ -->
+  <div id="landing">
+    <header class="site-header">
+      <div class="brand" aria-label="Workboot Digital">
+        <div class="mark" aria-hidden="true">W</div>
+        <div class="brand-text">
+          <strong>WORKBOOT <span>DIGITAL</span></strong>
+          <small>Digital &amp; Design Studio</small>
+        </div>
+      </div>
+      <div class="header-domain"><a href="https://workbootdigital.ca">workbootdigital.ca</a></div>
+    </header>
+
+    <main>
+      <section class="card" aria-labelledby="page-title">
+        <div class="location"><i aria-hidden="true"></i> Calgary, Alberta</div>
+
+        <h1 id="page-title">Workboot <span class="accent">Digital</span></h1>
+        <p class="lede">Pre-built website rebuilds for <strong>Calgary trades and home-services businesses</strong> — your new site, built first so you can see it before you commit.</p>
+
+        <div id="ctaBlock">
+          <button type="button" class="cta-primary" id="viewRebuildBtn" aria-expanded="false" aria-controls="gate">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+            View My Rebuild
+          </button>
+          <p class="cta-note">Were you invited to preview a rebuild? Tap above and enter the unique code from your invite — it opens your pitch page, with your rebuild one tap away.</p>
+        </div>
+
+        <form class="gate" id="gate" hidden novalidate>
+          <div class="gate-head">
+            <div class="gate-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <div>
+              <h2>Enter your invite code</h2>
+              <p>Each code opens one client&rsquo;s private pitch page, with their rebuild linked inside — yours only.</p>
+            </div>
+          </div>
+
+          <label for="codeInput">Your unique code</label>
+          <div class="gate-row">
+            <input id="codeInput" name="code" type="text" inputmode="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="Enter your code" aria-describedby="gateHint gateError" />
+            <button type="submit" class="btn" id="unlockBtn">Unlock Preview</button>
+          </div>
+          <p class="gate-hint" id="gateHint">Codes aren&rsquo;t case-sensitive. You&rsquo;ll find yours in the invite we sent you. The moment your code is accepted, a 15-minute clock starts — it covers your pitch page and your rebuild. Re-enter your code anytime for another 15.</p>
+
+          <div class="gate-expired" id="gateExpired" role="alert" hidden>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span>Your 15 minutes are up — your pitch page and rebuild have locked again. Re-enter your code for another 15 minutes.</span>
+          </div>
+
+          <div class="gate-error" id="gateError" role="alert" hidden>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <span id="gateErrorText">That code doesn&rsquo;t match an invited preview. Check the code in your invite and try again.</span>
+          </div>
+          <div class="gate-success" id="gateSuccess" role="status" hidden>
+            <span id="gateSuccessText">Code accepted — opening your preview&hellip;</span>
+          </div>
+
+          <button type="button" class="back-link" id="gateBack">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+            Back
+          </button>
+        </form>
+
+        <div class="divider" aria-hidden="true">Get in touch</div>
+        <p class="contact-line">New project or questions? Email <a href="mailto:mattcwork3@outlook.com">mattcwork3@outlook.com</a></p>
+      </section>
+    </main>
+
+    <footer>
+      <span>&copy; 2026 Workboot Digital &middot; Calgary, AB</span>
+      <span><a href="https://workbootdigital.ca">workbootdigital.ca</a> &middot; <a href="mailto:mattcwork3@outlook.com">mattcwork3@outlook.com</a></span>
+    </footer>
+  </div>
+
+  <!-- ============ PITCH PAGE (after code, before rebuild) ============ -->
+  <div class="pitch" id="pitch" hidden>
+    <div class="pitch-bar">
+      <div class="mark" aria-hidden="true">W</div>
+      <div class="pitch-title">
+        <strong id="pitchClient">Your Pitch — Workboot Digital</strong>
+        <small>Workboot Digital &middot; workbootdigital.ca</small>
+      </div>
+      <div class="preview-timer" id="pitchTimer" role="timer" aria-label="Time left in this viewing session">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <span class="timer-label">Access expires in</span> <strong id="pitchCountdown">15:00</strong>
+      </div>
+      <button type="button" class="pitch-home" id="pitchHome">Workboot Digital home</button>
+    </div>
+
+    <div class="pitch-wrap">
+      <!-- Heads-up shown as soon as the code is applied -->
+      <div class="pitch-alert" id="pitchHeadsup" role="status">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <span><strong>Heads-up — you have 15 minutes.</strong> Your code unlocked this pitch page and your rebuild for <strong id="pitchHeadsupTime">15:00</strong>. The countdown above keeps running while you read and while you view the rebuild. When it hits zero, the rebuild locks — you can re-enter your code from the home page for another 15 minutes.</span>
+      </div>
+      <!-- Shown after expiry -->
+      <div class="pitch-alert expired-note" id="pitchExpired" role="alert" hidden>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <span><strong>Your 15 minutes are up.</strong> The rebuild preview has locked again. Head back to the home page and re-enter your code for another 15 minutes — or just email <a href="mailto:mattcwork3@outlook.com">mattcwork3@outlook.com</a> and I&rsquo;ll walk you through it.</span>
+      </div>
+
+      <article class="pitch-doc" aria-labelledby="pitchTitle">
+        <p class="from-line">Workboot Digital &middot; Calgary</p>
+        <h1 id="pitchTitle">Hi Mike — I&rsquo;m Matthew Craats. <span class="accent">I already built your new website.</span></h1>
+        <p>I run Workboot Digital here in Calgary. I build websites for trades and home-service businesses — the kind of site that turns a Google search into a booked job. I went through Mr. Mike&rsquo;s current site, then built a complete replacement so you could judge the finished work instead of a sales promise. Here is why I bothered, and what I built.</p>
+
+        <button type="button" class="pitch-rebuild" id="pitchRebuildBtn">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          View Your Rebuild
+        </button>
+        <p class="pitch-rebuild-note" id="pitchRebuildNote">Your finished rebuild, full-screen. You can come back to this page anytime while your 15 minutes last.</p>
+        <p style="text-align:center; margin-top:14px"><button type="button" class="pitch-reenter" id="pitchReenter" hidden>Enter my code again</button></p>
+
+        <h2>Your business is strong. Your website is holding it back.</h2>
+        <p>You have what most plumbing companies would love to have: 24/7 service and a <strong>4.6-star rating across 3,506 Google reviews</strong>. But a customer landing on mrmikesplumbing.ca today runs into this:</p>
+        <ul class="pitch-list">
+          <li><span class="li-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span><strong>No way to book online</strong> — just a form that promises someone will &ldquo;get back to you ASAP.&rdquo; After hours, that job goes to the next company on the list.</span></li>
+          <li><span class="li-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span><strong>No answers on the page</strong> — no FAQ, no prices, no specials. Every question means a phone call, and plenty of people simply will not call.</span></li>
+          <li><span class="li-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span><strong>Two different phone numbers</strong> on the same site — (587) 205-8273 up front, (403) 520-2040 in the footer. A customer in a hurry does not stop to figure out which one to call.</span></li>
+          <li><span class="li-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span><span><strong>Dated, typo&rsquo;d copy</strong> — COVID-era wording is still live, along with errors like &ldquo;Signall Hill&rdquo; and &ldquo;Cliff Bungalw.&rdquo; It undercuts a first-class operation.</span></li>
+        </ul>
+
+        <h2>What I built for you</h2>
+        <ul class="pitch-list fixed">
+          <li><span class="li-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong>One number everywhere:</strong> (403) 520-2040, front and centre, with a sticky emergency bar so it is always one tap away.</span></li>
+          <li><span class="li-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong>Online booking that finishes the job</strong> — a guided form plus a virtual assistant that walks the customer through it, with an SMS confirmation step.</span></li>
+          <li><span class="li-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong>Answers built in:</strong> a full FAQ, current specials, your Home Care Plan, and tabbed Plumbing / HVAC / Commercial services.</span></li>
+          <li><span class="li-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong>A modern, fast page</strong> that works properly on a phone — where most emergency searches happen — with clean, current copy throughout.</span></li>
+        </ul>
+
+        <h2>Two simple ways to pay — your pick</h2>
+        <div class="pitch-pricing">
+          <div class="price-card">
+            <p class="opt">Option A — Own it outright</p>
+            <p class="amount">$3,500 one-time</p>
+            <p>Half up front, half at launch. Optional Website Care Plan at $79–$99/month if you want ongoing updates and support handled for you.</p>
+          </div>
+          <div class="price-card">
+            <p class="opt">Option B — Spread it out</p>
+            <p class="amount">$499 down + $179/month</p>
+            <p>Includes hosting, your owner dashboard, small edits, and support — no big cheque up front, and the site stays looked after.</p>
+          </div>
+        </div>
+
+        <div class="pitch-signoff">
+          <p><strong>Give me 15 minutes and I will walk you through it</strong> — on desktop and phone. The site is already built, so you are judging real work, not a mock-up. If it is not for you, just say pass and I will delete it. No follow-up calls.</p>
+          <p>Matthew Craats — Workboot Digital, Calgary. Websites built for the trades, by someone who answers his own email.<br /><a href="mailto:mattcwork3@outlook.com">mattcwork3@outlook.com</a> &middot; <a href="https://workbootdigital.ca">workbootdigital.ca</a></p>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- ============ PRIVATE PREVIEW ============ -->
+  <section class="preview" id="preview" hidden aria-label="Private rebuild preview">
+    <div class="preview-bar">
+      <div class="mark" aria-hidden="true">W</div>
+      <div class="preview-title">
+        <strong id="previewClient">Private Preview</strong>
+        <small>Workboot Digital &middot; workbootdigital.ca</small>
+      </div>
+      <div class="preview-timer" id="previewTimer" role="timer" aria-label="Time left to view this preview">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <span class="timer-label">Access expires in</span> <strong id="previewCountdown">15:00</strong>
+      </div>
+      <button type="button" class="preview-back" id="previewBack">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+        Back to Pitch Page
+      </button>
+    </div>
+    <div class="preview-loading" id="previewLoading">Loading your rebuild preview&hellip;</div>
+    <div class="preview-frame-wrap">
+      <iframe id="previewFrame" title="Your website rebuild preview" loading="eager" referrerpolicy="no-referrer"></iframe>
+    </div>
+  </section>
+
+<script>
+  (function () {
+    // Per-client invite codes. Each code unlocks only that client's preview.
+    // Add a client by adding one line here and placing their preview file in assets/.
+    var PREVIEWS = {
+      "MIKE2026": { client: "Mr. Mike's Plumbing", src: "assets/mr-mikes-preview.html" }
+    };
+
+    var landing = document.getElementById("landing");
+    var viewBtn = document.getElementById("viewRebuildBtn");
+    var ctaBlock = document.getElementById("ctaBlock");
+    var gate = document.getElementById("gate");
+    var gateBack = document.getElementById("gateBack");
+    var codeInput = document.getElementById("codeInput");
+    var gateError = document.getElementById("gateError");
+    var gateErrorText = document.getElementById("gateErrorText");
+    var gateSuccess = document.getElementById("gateSuccess");
+    var gateSuccessText = document.getElementById("gateSuccessText");
+    var gateExpired = document.getElementById("gateExpired");
+
+    var preview = document.getElementById("preview");
+    var previewFrame = document.getElementById("previewFrame");
+    var previewClient = document.getElementById("previewClient");
+    var previewLoading = document.getElementById("previewLoading");
+    var previewBack = document.getElementById("previewBack");
+    var previewTimer = document.getElementById("previewTimer");
+    var previewCountdown = document.getElementById("previewCountdown");
+
+    var pitch = document.getElementById("pitch");
+    var pitchClient = document.getElementById("pitchClient");
+    var pitchTimer = document.getElementById("pitchTimer");
+    var pitchCountdown = document.getElementById("pitchCountdown");
+    var pitchHeadsup = document.getElementById("pitchHeadsup");
+    var pitchHeadsupTime = document.getElementById("pitchHeadsupTime");
+    var pitchExpired = document.getElementById("pitchExpired");
+    var pitchRebuildBtn = document.getElementById("pitchRebuildBtn");
+    var pitchRebuildNote = document.getElementById("pitchRebuildNote");
+    var pitchReenter = document.getElementById("pitchReenter");
+    var pitchHome = document.getElementById("pitchHome");
+    var currentMatch = null;
+    var sessionExpired = false;
+
+    // Each unlock lasts exactly 15 minutes, then the preview locks again.
+    var ACCESS_MS = 15 * 60 * 1000;
+    var accessEndsAt = 0;
+    var accessInterval = null;
+
+    function formatRemaining(ms) {
+      var totalSec = Math.max(0, Math.ceil(ms / 1000));
+      var m = Math.floor(totalSec / 60);
+      var s = totalSec % 60;
+      return (m < 10 ? "0" + m : "" + m) + ":" + (s < 10 ? "0" + s : "" + s);
+    }
+    function renderCountdown() {
+      var left = accessEndsAt - Date.now();
+      var text = formatRemaining(left);
+      previewCountdown.textContent = text;
+      pitchCountdown.textContent = text;
+      pitchHeadsupTime.textContent = text;
+      var urgent = left <= 60 * 1000 && left > 0;
+      previewTimer.classList.toggle("urgent", urgent);
+      pitchTimer.classList.toggle("urgent", urgent);
+    }
+    function startAccessTimer() {
+      stopAccessTimer();
+      accessEndsAt = Date.now() + ACCESS_MS;
+      renderCountdown();
+      accessInterval = window.setInterval(function () {
+        if (accessEndsAt - Date.now() <= 0) {
+          previewCountdown.textContent = "00:00";
+          expirePreview();
+          return;
+        }
+        renderCountdown();
+      }, 250);
+    }
+    function stopAccessTimer() {
+      if (accessInterval !== null) {
+        window.clearInterval(accessInterval);
+        accessInterval = null;
+      }
+      accessEndsAt = 0;
+    }
+
+    function showGate() {
+      gate.hidden = false;
+      ctaBlock.hidden = true;
+      viewBtn.setAttribute("aria-expanded", "true");
+      hideMessages();
+      window.setTimeout(function () { codeInput.focus(); }, 30);
+      gate.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    }
+    function hideGate() {
+      gate.hidden = true;
+      ctaBlock.hidden = false;
+      viewBtn.setAttribute("aria-expanded", "false");
+      codeInput.value = "";
+      codeInput.removeAttribute("aria-invalid");
+      hideMessages();
+      viewBtn.focus();
+    }
+    function hideMessages() {
+      gateError.hidden = true;
+      gateSuccess.hidden = true;
+      gateExpired.hidden = true;
+    }
+    function showError(msg) {
+      gateSuccess.hidden = true;
+      gateExpired.hidden = true;
+      gateErrorText.textContent = msg;
+      gateError.hidden = false;
+      codeInput.setAttribute("aria-invalid", "true");
+      gate.classList.remove("shake");
+      // restart shake animation
+      void gate.offsetWidth;
+      gate.classList.add("shake");
+      codeInput.select();
+    }
+
+    viewBtn.addEventListener("click", showGate);
+    gateBack.addEventListener("click", hideGate);
+    codeInput.addEventListener("input", function () {
+      codeInput.removeAttribute("aria-invalid");
+      gateError.hidden = true;
+      gateExpired.hidden = true;
+    });
+
+    gate.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var raw = (codeInput.value || "").trim().toUpperCase().replace(/\s+/g, "");
+      if (!raw) {
+        showError("Enter the code from your invite, then tap Unlock Preview.");
+        codeInput.focus();
+        return;
+      }
+      var match = PREVIEWS[raw];
+      if (!match) {
+        showError("That code doesn't match an invited preview. Check the code in your invite and try again — if it still doesn't work, email mattcwork3@outlook.com.");
+        return;
+      }
+      // Correct code — the 15-minute clock starts right now, and the visitor
+      // lands on their pitch page first (the rebuild is linked inside it).
+      gateError.hidden = true;
+      gateExpired.hidden = true;
+      codeInput.removeAttribute("aria-invalid");
+      gateSuccessText.textContent = "Code accepted — opening your pitch page. Heads-up: your access lasts 15 minutes from now, and the countdown will stay on screen while you read and view your rebuild.";
+      gateSuccess.hidden = false;
+      currentMatch = match;
+      sessionExpired = false;
+      startAccessTimer();
+      window.setTimeout(function () { showPitch(); }, 450);
+    });
+
+    function showPitch() {
+      if (!currentMatch) return;
+      pitchClient.textContent = currentMatch.client + " — Your Pitch";
+      previewClient.textContent = currentMatch.client + " — Rebuild Preview";
+      pitchHeadsup.hidden = false;
+      pitchExpired.hidden = true;
+      pitchRebuildBtn.disabled = false;
+      pitchRebuildNote.textContent = "Your finished rebuild, full-screen. You can come back to this page anytime while your 15 minutes last.";
+      pitchReenter.hidden = true;
+      renderCountdown();
+      landing.hidden = true;
+      preview.hidden = true;
+      pitch.hidden = false;
+      document.body.classList.remove("preview-open");
+      window.scrollTo(0, 0);
+      pitchRebuildBtn.focus();
+    }
+
+    function openPreview() {
+      if (!currentMatch || sessionExpired) return;
+      previewLoading.hidden = false;
+      previewFrame.onload = function () { previewLoading.hidden = true; };
+      // Set the source only now — nothing loads before a valid code + tap.
+      previewFrame.src = currentMatch.src;
+      pitch.hidden = true;
+      landing.hidden = true;
+      preview.hidden = false;
+      document.body.classList.add("preview-open");
+      window.scrollTo(0, 0);
+      previewBack.focus();
+    }
+
+    function unloadPreviewFrame() {
+      previewFrame.onload = null;
+      previewFrame.removeAttribute("src");
+      previewFrame.src = "about:blank";
+    }
+
+    function backToPitch() {
+      // Leaving the rebuild returns to the pitch page; the clock keeps running.
+      preview.hidden = true;
+      document.body.classList.remove("preview-open");
+      unloadPreviewFrame();
+      if (sessionExpired) { showExpiredPitch(); return; }
+      pitch.hidden = false;
+      window.scrollTo(0, 0);
+      pitchRebuildBtn.focus();
+    }
+
+    function showExpiredPitch() {
+      preview.hidden = true;
+      landing.hidden = true;
+      document.body.classList.remove("preview-open");
+      unloadPreviewFrame();
+      pitch.hidden = false;
+      pitchHeadsup.hidden = true;
+      pitchExpired.hidden = false;
+      pitchRebuildBtn.disabled = true;
+      pitchRebuildNote.textContent = "This button is locked until you unlock another 15 minutes with your code.";
+      pitchReenter.hidden = false;
+      previewCountdown.textContent = "00:00";
+      pitchCountdown.textContent = "00:00";
+      window.scrollTo(0, 0);
+      pitchReenter.focus();
+    }
+
+    function expirePreview() {
+      // Time's up: bounce the visitor back to the pitch page (closing the
+      // rebuild if it was open), disable the rebuild button, and explain
+      // they can re-enter their code from the home page.
+      stopAccessTimer();
+      sessionExpired = true;
+      showExpiredPitch();
+    }
+
+    function goHome(showGateExpired) {
+      stopAccessTimer();
+      sessionExpired = false;
+      currentMatch = null;
+      preview.hidden = true;
+      pitch.hidden = true;
+      document.body.classList.remove("preview-open");
+      unloadPreviewFrame();
+      landing.hidden = false;
+      hideGate();
+      window.scrollTo(0, 0);
+      if (showGateExpired) {
+        gate.hidden = false;
+        ctaBlock.hidden = true;
+        viewBtn.setAttribute("aria-expanded", "true");
+        gateError.hidden = true;
+        gateSuccess.hidden = true;
+        codeInput.value = "";
+        codeInput.removeAttribute("aria-invalid");
+        gateExpired.hidden = false;
+        window.setTimeout(function () { codeInput.focus(); }, 30);
+      }
+    }
+
+    pitchRebuildBtn.addEventListener("click", openPreview);
+    pitchReenter.addEventListener("click", function () { goHome(true); });
+    pitchHome.addEventListener("click", function () { goHome(false); });
+    previewBack.addEventListener("click", backToPitch);
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !preview.hidden) backToPitch();
+    });
+  })();
+</script>
+</body>
+</html>
