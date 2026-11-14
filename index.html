@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<meta name="color-scheme" content="light dark" />
-<meta name="description" content="Workboot Digital — pre-built website rebuilds for Calgary trades and home-services businesses. Invited clients: enter your code to view your rebuild." />
+<meta name="color-scheme" content="light" />
+<meta name="description" content="Workboot Digital builds thoughtful, mobile-first websites and practical digital tools for Calgary trades and service businesses." />
 <link rel="icon" href="data:," />
-<title>Workboot Digital — Calgary Website Rebuilds for Trades</title>
+<title>Workboot Digital — Websites & Digital Tools for Calgary Businesses</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -469,54 +469,227 @@
     .preview-back{padding:9px 12px; font-size:13.5px}
   }
 </style>
+<style id="marketing-overrides">
+  :root{--bg:#f7f7f3;--surface:#fff;--surface-2:#eeefe9;--ink:#171b26;--ink-2:#252b38;--muted:#606a78;--muted-2:#84909b;--accent:#3f438f;--accent-strong:#30336f;--accent-soft:#eef0fb;--accent-line:#d3d7f0;--line:#e5e7e0;--shadow:0 18px 50px rgba(22,27,38,.09);--radius:16px}
+  body{background:var(--bg);color:var(--ink)}
+  .site-header{max-width:1220px;padding:20px 32px;align-items:center}
+  .brand{text-decoration:none;color:var(--ink)}
+  .brand:hover{color:var(--ink)}
+  .brand .mark{border-radius:13px;background:#20263a;color:#fff;box-shadow:0 8px 18px rgba(32,38,58,.2)}
+  .brand-text strong{font-size:16px;letter-spacing:.4px}.brand-text strong span{color:var(--accent)}
+  .brand-text small{letter-spacing:1.5px}
+  .site-nav{display:flex;align-items:center;gap:28px}
+  .site-nav>a{font-size:14px;font-weight:700;color:var(--muted);text-decoration:none}
+  .site-nav>a:hover{color:var(--accent)}
+  .nav-login{border:1px solid #d8dbe4;border-radius:10px;background:#fff;color:var(--ink);padding:11px 15px;font-size:14px;font-weight:700;cursor:pointer}
+  .nav-login span{color:var(--accent);margin-left:8px}
+  .menu-toggle{display:none}
+  main.site-main{display:block;max-width:1220px;padding:24px 32px 72px;margin:0 auto}
+  .hero{display:grid;grid-template-columns:1.02fr .98fr;gap:58px;align-items:center;padding:48px 0 64px;min-height:510px}
+  .hero-copy{max-width:570px}
+  .eyebrow{display:flex;align-items:center;gap:9px;color:var(--accent);font-size:11px;font-weight:800;letter-spacing:1.5px;margin:0 0 22px}
+  .live-dot{width:8px;height:8px;background:#35a879;border-radius:50%;box-shadow:0 0 0 4px #e2f5ec}
+  .hero h1{font-size:clamp(48px,6.1vw,76px);line-height:.99;letter-spacing:-2.4px;margin:0 0 22px;max-width:650px}
+  .hero h1 .accent{color:var(--accent)}
+  .hero-lede{font-size:19px;line-height:1.6;color:var(--muted);max-width:520px;margin:0 0 28px}
+  .hero-actions{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+  .hero .cta-primary{display:inline-flex;width:auto;max-width:none;padding:15px 20px;border-radius:11px;font-size:15px;text-decoration:none;box-shadow:0 9px 20px rgba(63,67,143,.18)}
+  .cta-primary span{font-size:19px}
+  .text-action,.inline-link{border:0;background:none;color:var(--ink);font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;padding:10px 0}
+  .text-action span,.inline-link span{color:var(--accent);margin-left:7px}
+  .hero-proof{margin-top:28px;font-size:13px;color:var(--muted);display:flex;gap:9px;align-items:center}
+  .hero-proof span{font-weight:900;color:#13865e}
+  .hero-visual{position:relative;min-height:400px;display:flex;align-items:center;justify-content:center}
+  .visual-glow{position:absolute;width:86%;height:84%;border-radius:50%;background:radial-gradient(circle,#e7e8fa 0,rgba(231,232,250,.55) 46%,transparent 73%);filter:blur(4px)}
+  .browser-card{position:relative;width:min(100%,520px);background:#fff;padding:10px;border-radius:19px;box-shadow:0 28px 75px rgba(33,37,65,.17);transform:rotate(1.5deg)}
+  .browser-top{height:34px;display:flex;align-items:center;gap:6px;padding:0 8px 8px;color:#7e8290;font-size:10px}
+  .browser-top>span{width:7px;height:7px;border-radius:50%;background:#e3e4e8}.browser-top>b{font-weight:600;margin-left:10px}
+  .browser-top i{font-style:normal;margin-left:auto}
+  .mock-site{border-radius:12px;overflow:hidden;background:#f7f3ed}
+  .mock-nav{height:52px;padding:0 16px;display:flex;align-items:center;gap:16px;background:#fff;font-size:9px;color:#4f5460}
+  .mock-nav strong{font-size:10px;color:#22283a;letter-spacing:.5px;margin-right:auto}
+  .mock-nav button{border:0;border-radius:6px;background:#3f438f;color:#fff;padding:8px 10px;font-size:9px;font-weight:700}
+  .mock-content{min-height:246px;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;padding:24px 24px 14px 30px;position:relative}
+  .mock-copy small{color:#6e7256;font-weight:800;font-size:8px;letter-spacing:1.1px}
+  .mock-copy h2{font-family:"Archivo",sans-serif;font-size:clamp(24px,3.2vw,39px);line-height:1.03;letter-spacing:-1px;color:#252d34;margin:10px 0}
+  .mock-copy h2 em{font-style:normal;color:#3f438f}
+  .mock-copy p{color:#737673;font-size:10px;margin:0 0 14px}
+  .mock-copy button{border:0;border-radius:7px;background:#e4b84e;color:#20232a;padding:10px 12px;font-size:9px;font-weight:800}
+  .mock-copy button span{margin-left:8px}
+  .mock-stars{margin-top:16px;color:#dc9d24;font-size:12px;letter-spacing:1px}
+  .mock-stars small{color:#777d85;letter-spacing:0;font-size:8px;margin-left:5px}
+  .mock-art{height:180px;position:relative;background:#dfe9e8;border-radius:100px 100px 12px 12px;overflow:hidden}
+  .art-sun{position:absolute;right:21px;top:20px;width:42px;height:42px;border-radius:50%;background:#eabe5b}
+  .art-house{position:absolute;bottom:0;left:18px;width:145px;height:114px}
+  .house-roof{position:absolute;top:0;left:8px;width:128px;height:80px;background:#344d52;clip-path:polygon(50% 0,100% 46%,94% 55%,50% 18%,6% 55%,0 46%)}
+  .house-body{position:absolute;bottom:0;left:19px;width:111px;height:80px;background:#f3eee1;border:5px solid #344d52;border-bottom:0;display:flex;justify-content:space-around;align-items:center}
+  .house-body i{display:block;width:24px;height:28px;background:#a8c4c4;border:3px solid #344d52}
+  .house-body b{position:absolute;bottom:0;left:43px;width:25px;height:39px;background:#bf8a61;border:3px solid #344d52;border-bottom:0}
+  .art-tool{position:absolute;right:10px;bottom:16px;width:40px;height:40px;border-radius:12px;background:#fff;color:#3f438f;display:grid;place-items:center;font-size:20px;box-shadow:0 5px 12px #7c8b8c55}
+  .mock-bottom{height:34px;background:#303944;color:#fff;display:flex;align-items:center;justify-content:space-around;font-size:7px;font-weight:800;letter-spacing:.7px}
+  .floating-note{position:absolute;right:-12px;bottom:36px;display:flex;align-items:center;gap:10px;background:white;padding:12px 16px;border-radius:12px;box-shadow:0 12px 28px #20263a22}
+  .note-icon{width:30px;height:30px;border-radius:9px;background:#e9eafa;display:grid;place-items:center;color:#3f438f;font-weight:900}
+  .floating-note b,.floating-note small{display:block}.floating-note b{font-size:11px}.floating-note small{font-size:10px;color:var(--muted);margin-top:2px}
+  .floating-badge{position:absolute;left:8px;top:38px;background:#20263a;color:#fff;border-radius:30px;padding:8px 13px 8px 8px;display:flex;align-items:center;gap:8px;font-size:10px;font-weight:700;box-shadow:0 8px 20px #20263a2a}
+  .floating-badge span{width:23px;height:23px;border-radius:50%;background:#fff;color:#20263a;display:grid;place-items:center;font-size:13px;font-weight:900}
+  .trust-strip{display:flex;justify-content:space-between;gap:15px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0;color:#4d5662;font-size:13px;font-weight:700}
+  .trust-strip span:first-letter{color:#16805f}
+  .services-section{padding:90px 0 100px}
+  .section-heading{text-align:center;max-width:620px;margin:0 auto 44px}
+  .section-heading .eyebrow{justify-content:center;margin-bottom:14px}
+  .section-heading h2,.process-intro h2,.contact-section h2{font-family:"Archivo",sans-serif;font-size:clamp(34px,4vw,50px);letter-spacing:-1.5px;line-height:1.08;margin:0 0 14px}
+  .section-heading>p:last-child,.process-intro>p:not(.eyebrow),.contact-section>div>p:last-child{font-size:16px;line-height:1.65;color:var(--muted);margin:0}
+  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .service-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px 27px 26px;min-height:260px;box-shadow:0 8px 24px rgba(31,37,56,.035)}
+  .service-card.featured{border-color:#cfd1ea;box-shadow:0 14px 32px rgba(63,67,143,.09)}
+  .service-number{position:absolute;right:22px;top:23px;color:#a6aab6;font-size:11px;font-weight:800;letter-spacing:1px}
+  .service-icon{width:42px;height:42px;border-radius:12px;background:#eef0fb;color:#3f438f;display:grid;place-items:center;font-size:19px;font-weight:800;margin-bottom:25px}
+  .service-card h3{font-family:"Archivo",sans-serif;font-size:20px;margin:0 0 10px;letter-spacing:-.3px}
+  .service-card p{min-height:65px;color:var(--muted);font-size:14px;line-height:1.6;margin:0 0 18px}
+  .service-card>a{font-size:13px;font-weight:800;color:var(--accent);text-decoration:none}
+  .service-card>a span{margin-left:7px}
+  .process-section{display:grid;grid-template-columns:.86fr 1.14fr;gap:80px;align-items:center;padding:50px 38px 84px;background:#eef0f8;border-radius:24px}
+  .process-intro .eyebrow{margin-bottom:17px}
+  .process-intro h2{font-size:clamp(34px,4vw,46px)}
+  .process-intro>p:not(.eyebrow){margin-bottom:20px}
+  .inline-link{display:inline-block;color:var(--accent)}
+  .steps{display:grid;gap:12px}
+  .steps article{display:flex;gap:17px;background:#fff;padding:19px 20px;border-radius:13px;align-items:flex-start}
+  .steps article>span{width:32px;height:32px;border-radius:50%;background:#e8e9f7;color:#3f438f;display:grid;place-items:center;font-weight:900;flex:0 0 32px}
+  .steps h3{font-family:"Archivo",sans-serif;font-size:15px;margin:1px 0 5px}
+  .steps p{font-size:13px;color:var(--muted);line-height:1.5;margin:0}
+  .client-section{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;padding:90px 0}
+  .client-copy h2{font-family:"Archivo",sans-serif;font-size:clamp(34px,4vw,48px);letter-spacing:-1.3px;line-height:1.08;margin:0 0 13px}
+  .client-copy>p:last-child{color:var(--muted);font-size:16px;line-height:1.6;margin:0}
+  .client-panel{padding:24px;background:#fff;border:1px solid var(--line);border-radius:17px;box-shadow:0 14px 35px #20263a0d}
+  .client-login-button{width:100%;border:0;border-radius:11px;background:#20263a;color:#fff;padding:15px 17px;text-align:left;font-size:15px;font-weight:800;cursor:pointer}
+  .client-login-button span{float:right;font-size:19px;font-weight:500}
+  .client-panel .cta-note{text-align:left;margin:11px 0 0;font-size:12px;max-width:none}
+  .client-panel .gate{margin-top:15px;padding:20px}
+  .client-panel .gate-row{flex-wrap:wrap}
+  .client-panel .gate-row input{min-width:160px}
+  .client-panel .gate-row .btn{flex:0 0 auto}
+  .contact-section{display:flex;justify-content:space-between;align-items:center;gap:30px;padding:42px 44px;background:#20263a;color:#fff;border-radius:20px}
+  .contact-section .eyebrow{color:#c0c3f4;margin-bottom:12px}
+  .contact-section h2{font-size:clamp(30px,3.5vw,42px);margin-bottom:9px}
+  .contact-section>div>p:last-child{color:#c8ccd6;font-size:14px}
+  .contact-button{flex:0 0 auto;border-radius:10px;padding:14px 18px;background:#fff;color:#20263a;text-decoration:none;font-weight:800;font-size:13px}
+  .contact-button span{margin-left:15px;color:#3f438f}
+  footer{max-width:1220px;width:100%;margin:0 auto;padding:24px 32px 30px;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:15px}
+  footer a{color:var(--muted);text-decoration:none}
+  .pitch-bar{max-width:none}
+  .client-panel .gate-head h2{font-size:18px}
+  @media(max-width:850px){.site-header{padding:17px 22px}.site-nav{gap:16px}.hero{gap:25px;padding:32px 0 48px}.hero h1{font-size:clamp(44px,7vw,64px)}.floating-note{right:-4px}.process-section{gap:35px;padding:42px 28px}.trust-strip{flex-wrap:wrap;justify-content:center;gap:10px 24px}}
+  @media(max-width:650px){
+    .site-header{padding:14px 18px}.brand .mark{width:40px;height:40px;flex-basis:40px}.brand-text strong{font-size:14px}.brand-text small{font-size:9px;letter-spacing:1px}
+    .menu-toggle{display:block;border:1px solid var(--line);background:#fff;border-radius:9px;width:40px;height:40px;font-size:18px;color:var(--ink)}
+    .site-nav{display:none;position:absolute;z-index:10;top:66px;left:14px;right:14px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);padding:15px;border-radius:13px;align-items:stretch;flex-direction:column;gap:7px}
+    .site-nav.open{display:flex}.site-nav>a{padding:10px}.nav-login{text-align:left}
+    main.site-main{padding:6px 18px 45px}.hero{grid-template-columns:1fr;padding:42px 0 35px;gap:22px;min-height:0}
+    .hero h1{font-size:clamp(44px,12vw,60px);letter-spacing:-1.7px}.hero-lede{font-size:17px}
+    .hero-actions{align-items:stretch;flex-direction:column;gap:6px}.hero .cta-primary{width:100%}.text-action{text-align:center}
+    .hero-visual{min-height:310px;margin:0 -4px}.browser-card{width:94%;padding:7px}.mock-nav{padding:0 9px;gap:7px}.mock-nav span{font-size:7px}.mock-nav button{padding:7px}
+    .mock-content{min-height:205px;padding:18px 12px 12px 17px}.mock-art{height:145px}.art-house{transform:scale(.8);transform-origin:bottom left;left:3px}.mock-copy h2{font-size:27px}
+    .mock-bottom{font-size:6px;letter-spacing:.2px}.floating-note{right:0;bottom:12px;padding:9px 11px}.floating-badge{left:0;top:5px}
+    .trust-strip{font-size:11px;gap:9px 14px;padding:17px 0}
+    .services-section{padding:65px 0}.section-heading{margin-bottom:28px}.service-grid{grid-template-columns:1fr;gap:12px}.service-card{min-height:0;padding:23px}.service-card p{min-height:0}
+    .process-section{grid-template-columns:1fr;gap:25px;padding:28px 19px;border-radius:17px}.steps article{padding:16px}
+    .client-section{grid-template-columns:1fr;gap:22px;padding:65px 0}.client-panel{padding:16px}.client-panel .gate{padding:17px}.client-panel .gate-row input,.client-panel .gate-row .btn{width:100%}
+    .contact-section{align-items:stretch;flex-direction:column;padding:30px 22px;border-radius:16px}.contact-button{text-align:center}
+    footer{padding:20px 18px 26px;flex-direction:column;text-align:center}
+  }
+</style>
 </head>
 <body>
 
   <!-- ============ LANDING ============ -->
   <div id="landing">
     <header class="site-header">
-      <div class="brand" aria-label="Workboot Digital">
-        <div class="mark" aria-hidden="true">W</div>
-        <div class="brand-text">
-          <strong>WORKBOOT <span>DIGITAL</span></strong>
-          <small>Digital &amp; Design Studio</small>
-        </div>
-      </div>
-      <div class="header-domain"><a href="https://workbootdigital.ca">workbootdigital.ca</a></div>
+      <a class="brand" href="#top" aria-label="Workboot Digital home">
+        <span class="mark" aria-hidden="true">W</span>
+        <span class="brand-text"><strong>WORKBOOT <span>DIGITAL</span></strong><small>Digital studio · Calgary, Alberta</small></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#services">What we do</a>
+        <a href="#process">How it works</a>
+        <a href="#contact">Contact</a>
+        <button class="nav-login" id="clientLoginBtn" type="button">Client login <span aria-hidden="true">↗</span></button>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
     </header>
-
-    <main>
-      <section class="card" aria-labelledby="page-title">
-        <div class="location"><i aria-hidden="true"></i> Calgary, Alberta</div>
-
-        <h1 id="page-title">Workboot <span class="accent">Digital</span></h1>
-        <p class="lede">Pre-built website rebuilds for <strong>Calgary trades and home-services businesses</strong> — your new site, built first so you can see it before you commit.</p>
-
-        <div id="ctaBlock">
-          <button type="button" class="cta-primary" id="viewRebuildBtn" aria-expanded="false" aria-controls="gate">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
-            View My Rebuild
-          </button>
-          <p class="cta-note">Were you invited to preview a rebuild? Tap above and enter the unique code from your invite — it opens your pitch page, with your rebuild one tap away.</p>
+    <main class="site-main" id="top">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span> BUILT FOR CALGARY TRADES &amp; SERVICE BUSINESSES</p>
+          <h1 id="page-title">Turn more of your website visits into <span class="accent">booked work.</span></h1>
+          <p class="hero-lede">We build clear, mobile-first websites that help local businesses get found, answer questions and make it easy to take the next step.</p>
+          <div class="hero-actions">
+            <a class="cta-primary" href="mailto:mattcwork3@outlook.com?subject=Free%20website%20review">Get a free website review <span aria-hidden="true">↗</span></a>
+            <button type="button" class="text-action" id="heroLoginBtn" aria-expanded="false" aria-controls="gate">I have a client invite <span aria-hidden="true">→</span></button>
+          </div>
+          <div class="hero-proof"><span>✓</span> Your site, built around the way your customers actually choose</div>
         </div>
+        <div class="hero-visual" aria-label="Website preview illustration">
+          <div class="visual-glow"></div>
+          <div class="browser-card">
+            <div class="browser-top"><span></span><span></span><span></span><b>yourbusiness.ca</b><i>↗</i></div>
+            <div class="mock-site">
+              <div class="mock-nav"><strong>YOUR BUSINESS</strong><span>Services&nbsp;&nbsp; About&nbsp;&nbsp; Contact</span><button type="button">Call now</button></div>
+              <div class="mock-content">
+                <div class="mock-copy"><small>HERE WHEN YOU NEED US</small><h2>Reliable help.<br><em>Right on time.</em></h2><p>Good work starts with one easy step.</p><button type="button">Book a service <span>→</span></button><div class="mock-stars">★★★★★ <small>Trusted by your neighbours</small></div></div>
+                <div class="mock-art"><div class="art-sun"></div><div class="art-house"><div class="house-roof"></div><div class="house-body"><i></i><i></i><b></b></div></div><div class="art-tool">✦</div></div>
+              </div>
+              <div class="mock-bottom"><span>FAST, FRIENDLY SERVICE</span><span>★★★★★ &nbsp; LOCAL REVIEWS</span><span>BOOK ONLINE</span></div>
+            </div>
+          </div>
+          <div class="floating-note"><span class="note-icon">↗</span><span><b>Made for mobile</b><small>Clear next steps on every screen</small></span></div>
+          <div class="floating-badge"><span>W</span> Workboot Digital</div>
+        </div>
+      </section>
 
+      <section class="trust-strip" aria-label="What every project includes">
+        <span>✓ Phone-first design</span><span>✓ Clear calls to action</span><span>✓ Built around your business</span><span>✓ One person to call</span>
+      </section>
+
+      <section class="services-section" id="services">
+        <div class="section-heading"><p class="eyebrow">THE RIGHT TOOLS FOR THE JOB</p><h2>A better digital front door.</h2><p>Practical improvements that help customers find you, trust you and get in touch.</p></div>
+        <div class="service-grid">
+          <article class="service-card"><span class="service-number">01</span><div class="service-icon">▣</div><h3>Website rebuilds</h3><p>A polished, fast website that explains what you do and makes contacting you feel easy.</p><a href="#contact">Explore a rebuild <span>→</span></a></article>
+          <article class="service-card featured"><span class="service-number">02</span><div class="service-icon">↗</div><h3>More useful leads</h3><p>Clear service pages, booking paths and quote requests designed to turn interest into action.</p><a href="#contact">Improve your lead flow <span>→</span></a></article>
+          <article class="service-card"><span class="service-number">03</span><div class="service-icon">✳</div><h3>Practical AI &amp; automation</h3><p>Reduce repetitive work with focused tools that support your team and your customers.</p><a href="#contact">Talk through an idea <span>→</span></a></article>
+        </div>
+      </section>
+
+      <section class="process-section" id="process">
+        <div class="process-intro"><p class="eyebrow">STRAIGHTFORWARD FROM DAY ONE</p><h2>See the work<br><span class="accent">before you commit.</span></h2><p>No long sales presentation. We start with your business, show you a clear direction, and agree on the work before anything moves ahead.</p><a class="inline-link" href="mailto:mattcwork3@outlook.com?subject=Let's%20talk%20about%20my%20website">Let’s talk about your website <span>→</span></a></div>
+        <div class="steps">
+          <article><span>1</span><div><h3>Tell us what needs to work better</h3><p>We’ll look at your current site, your services and what customers need from you.</p></div></article>
+          <article><span>2</span><div><h3>Review a clear plan and preview</h3><p>See the proposed experience, scope and price before deciding to move forward.</p></div></article>
+          <article><span>3</span><div><h3>Launch with support</h3><p>We’ll help get your new site online and make sure you know how to use it.</p></div></article>
+        </div>
+      </section>
+
+      <section class="client-section" id="client-access">
+        <div class="client-copy"><p class="eyebrow">ALREADY WORKING WITH US?</p><h2>Your project, one step away.</h2><p>Open the private pitch and rebuild preview from your invitation.</p></div>
+        <div class="client-panel">
+          <div id="ctaBlock"><button type="button" class="client-login-button" id="viewRebuildBtn">Client login <span aria-hidden="true">→</span></button><p class="cta-note">Invited clients: enter the unique access code in your email to open your private project preview.</p></div>
         <form class="gate" id="gate" hidden novalidate>
           <div class="gate-head">
             <div class="gate-icon" aria-hidden="true">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
             </div>
             <div>
-              <h2>Enter your invite code</h2>
-              <p>Each code opens one client&rsquo;s private pitch page, with their rebuild linked inside — yours only.</p>
+              <h2>Client sign-in</h2>
+              <p>Use the access code from your Workboot invitation to open your private pitch and rebuild preview.</p>
             </div>
           </div>
 
-          <label for="codeInput">Your unique code</label>
+          <label for="codeInput">Your access code</label>
           <div class="gate-row">
             <input id="codeInput" name="code" type="text" inputmode="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="Enter your code" aria-describedby="gateHint gateError" />
-            <button type="submit" class="btn" id="unlockBtn">Unlock Preview</button>
+            <button type="submit" class="btn" id="unlockBtn">Continue</button>
           </div>
-          <p class="gate-hint" id="gateHint">Codes aren&rsquo;t case-sensitive. You&rsquo;ll find yours in the invite we sent you. The moment your code is accepted, a 15-minute clock starts — it covers your pitch page and your rebuild. Re-enter your code anytime for another 15.</p>
+          <p class="gate-hint" id="gateHint">This client area uses invitation codes. Use the personal code in your Workboot email; contact us if you need account access.</p>
 
           <div class="gate-expired" id="gateExpired" role="alert" hidden>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
@@ -537,14 +710,18 @@
           </button>
         </form>
 
-        <div class="divider" aria-hidden="true">Get in touch</div>
-        <p class="contact-line">New project or questions? Email <a href="mailto:mattcwork3@outlook.com">mattcwork3@outlook.com</a></p>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact">
+        <div><p class="eyebrow">LET’S MAKE THE NEXT STEP EASY</p><h2>Ready for a better website?</h2><p>Tell us a little about your business. We’ll get back to you with a practical next step.</p></div>
+        <a class="contact-button" href="mailto:mattcwork3@outlook.com?subject=Free%20website%20review">Email Workboot Digital <span>↗</span></a>
       </section>
     </main>
 
     <footer>
       <span>&copy; 2026 Workboot Digital &middot; Calgary, AB</span>
-      <span><a href="https://workbootdigital.ca">workbootdigital.ca</a> &middot; <a href="mailto:mattcwork3@outlook.com">mattcwork3@outlook.com</a></span>
+      <span><a href="https://workbootdigital.ca">workbootdigital.ca</a> · <a href="mailto:mattcwork3@outlook.com">mattcwork3@outlook.com</a></span>
     </footer>
   </div>
 
@@ -688,7 +865,7 @@
     var pitchRebuildNote = document.getElementById("pitchRebuildNote");
     var pitchReenter = document.getElementById("pitchReenter");
     var pitchHome = document.getElementById("pitchHome");
-    var currentMatch = null;
+    var currentMatch = null;\n    var clientLoginBtn = document.getElementById("clientLoginBtn");\n    var heroLoginBtn = document.getElementById("heroLoginBtn");\n    var openClientLogin = document.getElementById("openClientLogin");\n    var menuToggle = document.getElementById("menuToggle");\n    var siteNav = document.querySelector(".site-nav");
     var sessionExpired = false;
 
     // Each unlock lasts exactly 15 minutes, then the preview locks again.
@@ -768,7 +945,7 @@
       codeInput.select();
     }
 
-    viewBtn.addEventListener("click", showGate);
+    viewBtn.addEventListener("click", showGate);\n    heroLoginBtn.addEventListener("click", showGate);\n    clientLoginBtn.addEventListener("click", function () { showGate(); siteNav.classList.remove("open"); menuToggle.setAttribute("aria-expanded", "false"); });\n    menuToggle.addEventListener("click", function () { var open = siteNav.classList.toggle("open"); menuToggle.setAttribute("aria-expanded", open ? "true" : "false"); });\n    siteNav.querySelectorAll("a").forEach(function (link) { link.addEventListener("click", function () { siteNav.classList.remove("open"); menuToggle.setAttribute("aria-expanded", "false"); }); });
     gateBack.addEventListener("click", hideGate);
     codeInput.addEventListener("input", function () {
       codeInput.removeAttribute("aria-invalid");
