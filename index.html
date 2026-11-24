@@ -599,6 +599,22 @@
     footer{padding:20px 18px 26px;flex-direction:column;text-align:center}
   }
 </style>
+<style id="sales-intake-styles">
+.sales-packages{max-width:1080px;margin:0 auto;padding:65px 24px}
+.sales-packages-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:26px}
+.sales-packages-grid article{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:26px;background:var(--surface);border:1px solid var(--line);border-radius:18px}
+.sales-packages-grid h3{font-size:23px;line-height:1.2;margin:0}
+.sales-packages-grid p{margin:0;color:var(--muted)}
+.sales-packages-grid a{margin-top:auto;font-weight:700}
+.sales-packages-detail{font-size:14px}
+.sales-package-note{color:var(--muted);font-size:14px;margin-top:16px}
+.sales-inquiry{display:grid;gap:12px;width:min(100%,440px);text-align:left}
+.sales-inquiry label{display:grid;gap:4px;font-size:14px;font-weight:700}
+.sales-inquiry input,.sales-inquiry select,.sales-inquiry textarea{width:100%;padding:12px;border-radius:9px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit}
+.sales-inquiry .contact-button{cursor:pointer;text-align:center;justify-content:center}
+.sales-disclosure{font-size:12px;color:var(--muted);margin:0}
+@media(max-width:760px){.sales-packages-grid{grid-template-columns:1fr}.sales-packages{padding:44px 18px}}
+</style>
 </head>
 <body>
 
@@ -624,7 +640,7 @@
           <h1 id="page-title">Turn more of your website visits into <span class="accent">booked work.</span></h1>
           <p class="hero-lede">We build clear, mobile-first websites that help local businesses get found, answer questions and make it easy to take the next step.</p>
           <div class="hero-actions">
-            <a class="cta-primary" href="mailto:mattcwork3@outlook.com?subject=Free%20website%20review">Get a free website review <span aria-hidden="true">↗</span></a>
+            <a class="cta-primary" href="mailto:matt@workbootdigital.com?subject=Free%20website%20review">Get a free website review <span aria-hidden="true">↗</span></a>
             <button type="button" class="text-action" id="heroLoginBtn" aria-expanded="false" aria-controls="gate">I have a client invite <span aria-hidden="true">→</span></button>
           </div>
           <div class="hero-proof"><span>✓</span> Your site, built around the way your customers actually choose</div>
@@ -660,8 +676,17 @@
         </div>
       </section>
 
+      <section class="sales-packages" id="packages" aria-labelledby="packages-title">
+<div class="section-heading"><p class="eyebrow">SIMPLE WAYS TO GET STARTED</p><h2 id="packages-title">Choose the help you need.</h2><p>No confusing technical language. Every project starts with a clear scope and quote before work begins.</p></div>
+<div class="sales-packages-grid">
+<article><span class="eyebrow">01 · GET ONLINE</span><h3>Website Refresh</h3><p>Give an existing website a cleaner look, clearer messaging and easier ways for customers to contact you.</p><p class="sales-packages-detail">Best for: a website that feels outdated.</p><a href="#contact">Request a refresh quote →</a></article>
+<article><span class="eyebrow">02 · GROW YOUR BUSINESS</span><h3>Website Makeover</h3><p>A more complete rebuild focused on mobile visitors, service pages and turning interest into inquiries.</p><p class="sales-packages-detail">Best for: businesses ready for a stronger online presence.</p><a href="#contact">Request a makeover quote →</a></article>
+<article><span class="eyebrow">03 · KEEP IMPROVING</span><h3>Monthly Website Care</h3><p>Ongoing updates, routine checks and practical improvements so your website doesn't get left behind.</p><p class="sales-packages-detail">Best for: owners who want ongoing support.</p><a href="#contact">Ask about monthly care →</a></article>
+</div>
+<p class="sales-package-note">Free initial website review. Project and monthly service prices are confirmed in writing before purchase; no automatic charges.</p>
+</section>
       <section class="process-section" id="process">
-        <div class="process-intro"><p class="eyebrow">STRAIGHTFORWARD FROM DAY ONE</p><h2>See the work<br><span class="accent">before you commit.</span></h2><p>No long sales presentation. We start with your business, show you a clear direction, and agree on the work before anything moves ahead.</p><a class="inline-link" href="mailto:mattcwork3@outlook.com?subject=Let's%20talk%20about%20my%20website">Let’s talk about your website <span>→</span></a></div>
+        <div class="process-intro"><p class="eyebrow">STRAIGHTFORWARD FROM DAY ONE</p><h2>See the work<br><span class="accent">before you commit.</span></h2><p>No long sales presentation. We start with your business, show you a clear direction, and agree on the work before anything moves ahead.</p><a class="inline-link" href="mailto:matt@workbootdigital.com?subject=Let's%20talk%20about%20my%20website">Let’s talk about your website <span>→</span></a></div>
         <div class="steps">
           <article><span>1</span><div><h3>Tell us what needs to work better</h3><p>We’ll look at your current site, your services and what customers need from you.</p></div></article>
           <article><span>2</span><div><h3>Review a clear plan and preview</h3><p>See the proposed experience, scope and price before deciding to move forward.</p></div></article>
@@ -715,13 +740,21 @@
 
       <section class="contact-section" id="contact">
         <div><p class="eyebrow">LET’S MAKE THE NEXT STEP EASY</p><h2>Ready for a better website?</h2><p>Tell us a little about your business. We’ll get back to you with a practical next step.</p></div>
-        <a class="contact-button" href="mailto:mattcwork3@outlook.com?subject=Free%20website%20review">Email Workboot Digital <span>↗</span></a>
+        <form id="salesInquiry" class="sales-inquiry">
+<label>Business name <input name="business" autocomplete="organization" required maxlength="120" placeholder="Your business name"></label>
+<label>Email address <input name="email" type="email" autocomplete="email" required maxlength="150" placeholder="you@business.ca"></label>
+<label>Current website (optional) <input name="website" type="url" inputmode="url" placeholder="https://yourbusiness.ca"></label>
+<label>What would you like help with? <select name="service" required><option value="">Select a service</option><option>Website Refresh</option><option>Website Makeover</option><option>Monthly Website Care</option><option>AI &amp; Automation</option><option>Not sure — please advise</option></select></label>
+<label>Anything else? (optional) <textarea name="notes" maxlength="1500" rows="3" placeholder="What would you like to improve?"></textarea></label>
+<button class="contact-button" type="submit">Prepare my free review request ↗</button>
+<p class="sales-disclosure">This opens your email app with the request filled in. Please press Send to deliver it; no information is submitted from this website automatically.</p>
+</form>
       </section>
     </main>
 
     <footer>
       <span>&copy; 2026 Workboot Digital &middot; Calgary, AB</span>
-      <span><a href="https://workbootdigital.ca">workbootdigital.ca</a> · <a href="mailto:mattcwork3@outlook.com">mattcwork3@outlook.com</a></span>
+      <span><a href="https://workbootdigital.ca">workbootdigital.ca</a> · <a href="mailto:matt@workbootdigital.com">matt@workbootdigital.com</a></span>
     </footer>
   </div>
 
@@ -749,7 +782,7 @@
       <!-- Shown after expiry -->
       <div class="pitch-alert expired-note" id="pitchExpired" role="alert" hidden>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-        <span><strong>Your 15 minutes are up.</strong> The rebuild preview has locked again. Head back to the home page and re-enter your code for another 15 minutes — or just email <a href="mailto:mattcwork3@outlook.com">mattcwork3@outlook.com</a> and I&rsquo;ll walk you through it.</span>
+        <span><strong>Your 15 minutes are up.</strong> The rebuild preview has locked again. Head back to the home page and re-enter your code for another 15 minutes — or just email <a href="mailto:matt@workbootdigital.com">matt@workbootdigital.com</a> and I&rsquo;ll walk you through it.</span>
       </div>
 
       <article class="pitch-doc" aria-labelledby="pitchTitle">
@@ -797,7 +830,7 @@
 
         <div class="pitch-signoff">
           <p><strong>Give me 15 minutes and I will walk you through it</strong> — on desktop and phone. The site is already built, so you are judging real work, not a mock-up. If it is not for you, just say pass and I will delete it. No follow-up calls.</p>
-          <p>Matthew Craats — Workboot Digital, Calgary. Websites built for the trades, by someone who answers his own email.<br /><a href="mailto:mattcwork3@outlook.com">mattcwork3@outlook.com</a> &middot; <a href="https://workbootdigital.ca">workbootdigital.ca</a></p>
+          <p>Matthew Craats — Workboot Digital, Calgary. Websites built for the trades, by someone who answers his own email.<br /><a href="mailto:matt@workbootdigital.com">matt@workbootdigital.com</a> &middot; <a href="https://workbootdigital.ca">workbootdigital.ca</a></p>
         </div>
       </article>
     </div>
@@ -963,7 +996,7 @@
       }
       var match = PREVIEWS[raw];
       if (!match) {
-        showError("That code doesn't match an invited preview. Check the code in your invite and try again — if it still doesn't work, email mattcwork3@outlook.com.");
+        showError("That code doesn't match an invited preview. Check the code in your invite and try again — if it still doesn't work, email matt@workbootdigital.com.");
         return;
       }
       // Correct code — the 15-minute clock starts right now, and the visitor
@@ -1086,6 +1119,29 @@
       if (e.key === "Escape" && !preview.hidden) backToPitch();
     });
   })();
+</script>
+<script id="sales-intake-script">
+(function(){
+  const form=document.getElementById("salesInquiry");
+  if(!form)return;
+  form.addEventListener("submit",function(event){
+    event.preventDefault();
+    if(!form.reportValidity())return;
+    const fd=new FormData(form);
+    const safe=(key)=>String(fd.get(key)||"").trim();
+    const subject="Free website review request — "+safe("business");
+    const body=[
+      "Business: "+safe("business"),
+      "Contact email: "+safe("email"),
+      "Website: "+(safe("website")||"Not provided"),
+      "Interested in: "+safe("service"),
+      "Details: "+(safe("notes")||"Not provided"),
+      "",
+      "Please contact me about a free initial review and quote."
+    ].join("\n");
+    window.location.href="mailto:matt@workbootdigital.com?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
+  });
+})();
 </script>
 </body>
 </html>
