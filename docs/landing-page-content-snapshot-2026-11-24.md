@@ -3,6 +3,10 @@
 **Snapshot date:** November 24, 2026 (late evening CST)
 **Source:** Muse web artifact `workboot-digital-landing-page` (Workboot Digital landing page)
 **Snapshot type:** Content record only — **this is NOT the app's source code.**
+**Live artifact version reflected:** v24. The page was actively being edited
+while this snapshot was made: an earlier draft of this file (first push) had
+already been superseded by the time it landed, so this version corrects it to
+v24. If the page changes again, this file goes stale with it.
 
 ## What this file is — and what it is not
 
@@ -47,40 +51,53 @@ Picked logo (plain text, #4 up-arrow version, no boot/badge illustration):
   arrow rising from the D in DIGITAL.
 - Dark version (navy background) for the site header; light version (white
   background) for print/invoices.
-- The orange arrow is part of the logo and was NOT recoloured in the Nov 24
-  box-colour change below.
+- The orange arrow is part of the logo. The artifact's version history
+  (v15–v24) shows no logo recolour, so the picked version above stands; a
+  background note elsewhere claimed the logo was recoloured to charcoal and
+  orange only and made bigger, but that change does not appear in the
+  artifact's edit history and is not recorded here as fact.
 
-## Colour scheme (as of Nov 24, 2026)
+## Colour scheme (as of v24)
 
-- **Default (locked in Nov 24): Light & clean** — white background, navy
-  text, electric blue + orange accents. The page loads in this scheme on every
-  visit and after a reload.
-- **Colour scheme picker:** still on the page with all four schemes; a
-  visitor's pick is remembered on their device (localStorage), with Light &
-  clean as the default when nothing is picked.
-- **Other schemes:** (1) Charcoal — dark navy + electric blue + orange (the
-  original default); (2) Deep teal & lime — dark teal background, bright lime
-  accent, white text; (3) Warm slate & amber — warm dark slate background,
-  amber/orange accent, soft white text.
-- **Nov 24 box-colour change (Light & clean theme only):** the orange-filled
-  boxes/banners are now light blue `#1d6fd6` (the same blue as the buttons)
-  with white text — the top demo banner, the hero "$0 preview" panel, and the
-  "$0 obligation" four-step panel in One-Time Services. White on `#1d6fd6` is
-  readable for the bold panel text. Other colour schemes were not changed.
+- **Current and only theme: charcoal and orange** — dark charcoal background
+  with orange accents. This was reinstated as the site's theme late on
+  Nov 24 (v22), replacing Light & clean.
+- **Colour scheme picker: removed entirely** (v23/v24) — no picker in the
+  header and none on the service info pages.
+- **Superseded the same evening:** Light & clean (white background, navy
+  text, electric blue + orange accents) was locked in as the default earlier
+  on Nov 24 (v18), with a four-scheme picker (charcoal, Light & clean, Deep
+  teal & lime, Warm slate & amber), and the orange-filled boxes were
+  recoloured light blue `#1d6fd6` with white text in that theme (v19: top
+  demo banner, hero $0 panel, $0 obligation panel). Both changes were scoped
+  to the Light & clean theme, which has since been removed — they no longer
+  apply to the live page. They are recorded here only so the change of
+  direction is not lost.
 
 ## Page structure
 
 1. **Header** — picked logo + slogan "We build first. You decide after."
+   (the slogan remains in the header; the artifact's edit history shows no
+   removal of it).
 2. **Hero** — headline, positioning line, and the $0 preview offer:
    "See your preview first — $0 upfront, $0 commitment. Just send site
-   details."
-3. **ONE-TIME SERVICES** — directly below the hero. Heading: "See it before
+   details." Hero photo (since v20): a tradesman in a hard hat standing in
+   front of a wood-framed house under construction at sunset. A banner at
+   the bottom of the hero photo reads "HOW IT WORKS" / "We draft it. You
+   approve it. Only then does it go live." (v22).
+3. **HOW IT WORKS section** (v21) — photo of a tradesman in winter work
+   clothes standing by his truck in the snow at dusk, looking at his phone
+   with a coffee. Heading: "HOW IT WORKS". Line: "We draft it. You approve
+   it. Only then does it go live." Short and plain English, in line with
+   the $0 preview model: preview first, the customer approves the exact
+   version, nothing goes live without their OK.
+4. **ONE-TIME SERVICES** — directly below the hero. Heading: "See it before
    you pay for it." Every one-time service works the same way (see "$0 preview
    model" below). Tap any service card to open its own info page with a
    plain-English description, before-and-after, and benefits.
-4. **Service info pages** — one per service, including the FlowRight Plumbing
+5. **Service info pages** — one per service, including the FlowRight Plumbing
    before-and-after on the Website Makeover info page.
-5. **Buy-stage monthly upsell** — monthly plans offered after a one-time
+6. **Buy-stage monthly upsell** — monthly plans offered after a one-time
    purchase (see "Monthly plans" below).
 
 ## One-time services (catalog)
@@ -169,7 +186,10 @@ separate launch authorization before anything is published.
 ## Snapshot provenance
 
 - Compiled November 24, 2026 from the project's recorded notes (landing-page
-  build history, picked logo, pricing, and the Nov 24 theme edits).
+  build history, picked logo, pricing, and the Nov 24 theme edits), then
+  corrected to the live artifact's version v24 after the page was edited
+  further during the backup (theme reverted to charcoal and orange, picker
+  removed, hero photo replaced, HOW IT WORKS section added).
 - Live artifact: Muse web artifact slug `workboot-digital-landing-page`.
 - Repo: mattcwork3-ui/workbootdigital. Branch for this snapshot:
   `backup/landing-page-content-2026-11-24`.
