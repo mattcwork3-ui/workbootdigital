@@ -576,24 +576,23 @@
     </style>
     <script>
     "use strict";
-    /* ============ Photos: stable Unsplash direct URLs (text-only build —
-       no binary image files anywhere). ============ */
-    var U = function (id, w) { return "https://images.unsplash.com/" + id + "?auto=format&fit=crop&w=" + (w || 1400) + "&q=80"; };
+    /* ============ Photos: owned local files in /assets/photos/ (recovered
+       from the Workboot preview — no hotlinks). ============ */
     var IMG = {
-      heroSnow: U("photo-1541888946425-d81bb19240f5", 1400),
-      trades: U("photo-1504307651254-35680f356dfd", 1400),
-      roofing: U("photo-1605146769289-440113cc3d00", 1400),
-      roofing2: U("photo-1568605114967-8130f3a36994", 1400),
-      hero: U("photo-1600585154340-be6161a56a0c", 1400),
-      landscaping: U("photo-1558904541-efa843a96f01", 1400),
-      handyman: U("photo-1572981779307-38b8cabb2407", 1400),
-      garden: U("photo-1416879595882-3373a0480b5b", 1400),
-      plumbHeroAfter: U("photo-1607472586893-edb57bdc0e39", 1400),
-      plumbOldBathroom: U("photo-1507652313519-d4e9174996dd", 1200),
-      plumbDrainFix: U("photo-1585704032915-c3400ca199e7", 1000),
-      plumbWaterHeater: U("photo-1615873968403-89e068629265", 1000),
-      plumbModernBath: U("photo-1584622650111-993a426fbf0a", 1000),
-      plumbKitchenFaucet: U("photo-1556911220-bff31c812dba", 1000)
+      heroSnow: "/assets/photos/hero-snow.png",
+      trades: "/assets/photos/trades.webp",
+      roofing: "/assets/photos/roofing.jpg",
+      roofing2: "/assets/photos/roofing2.jpg",
+      hero: "/assets/photos/hero.jpg",
+      landscaping: "/assets/photos/landscaping.jpg",
+      handyman: "/assets/photos/handyman.webp",
+      garden: "/assets/photos/garden2.png",
+      plumbHeroAfter: "/assets/photos/plumb-hero-after.webp",
+      plumbOldBathroom: "/assets/photos/plumb-old-bathroom.png",
+      plumbDrainFix: "/assets/photos/plumb-drain-fix.webp",
+      plumbWaterHeater: "/assets/photos/plumb-water-heater.jpg",
+      plumbModernBath: "/assets/photos/plumb-modern-bath.webp",
+      plumbKitchenFaucet: "/assets/photos/plumb-kitchen-faucet.webp"
     };
 
     /* ============ Catalog (current prices, from the live catalog) ============ */
@@ -1181,7 +1180,7 @@
         '<button type="button" class="btn btn-outline btn-lg" data-nav="section" data-id="services">See One-Time Services</button>' +
         "</div></div>" +
         '<figure class="hero-figure"><div class="imgwrap">' +
-        '<img src="' + IMG.heroSnow + '" alt="Two construction workers in safety gear reviewing plans together at a building site" />' +
+        '<img src="' + IMG.heroSnow + '" alt="Tradesman beside his truck in the snow at dusk, coffee and phone in hand" />' +
         '<div class="hero-banner"><p class="k">HOW IT WORKS</p><p class="t">We draft it. You approve it. Only then does it go live.</p></div></div>' +
         "<figcaption>The kind of business we build for: skilled, busy, and too booked to babysit a website.</figcaption></figure>" +
         "</div></section>";
